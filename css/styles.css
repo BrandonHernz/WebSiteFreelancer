@@ -1,0 +1,105 @@
+:root {
+  --backgorund: #84a98c;
+  --white: #fff;
+  --black: #000;
+  --gray: #2a324b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Albert Sans", sans-serif;
+}
+
+.header {
+  background-color: var(--backgorund);
+}
+
+.nav {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav__checkbox {
+  display: none;
+}
+
+.nav__toggle {
+  position: absolute;
+  cursor: pointer;
+  margin: 1rem;
+  right: 0;
+}
+
+.nav__toggle svg {
+  width: 4rem;
+  fill: var(--white);
+}
+
+.nav__toggle .close {
+  display: none;
+}
+
+.nav__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav__menu a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.1rem;
+}
+
+.nav__menu li {
+  list-style-type: none;
+  display: none;
+}
+
+.nav__menu li:first-child {
+  display: block;
+  margin-right: auto;
+}
+
+#nav__checkbox:checked ~ ul.nav__menu li {
+  display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .close {
+  display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .menu {
+  display: none;
+}
+
+.nav__menu .menu__logo {
+  font-size: 1rem;
+  color: #14213d;
+}
+
+@media (min-width: 560px) {
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__menu {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__menu li {
+    display: block;
+  }
+}
